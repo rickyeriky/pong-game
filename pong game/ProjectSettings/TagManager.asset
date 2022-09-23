@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wall
+  - Paddle
+  - Barrier
+  - Undefined
+  - RightBarrier
+  - LeftBarrier
   layers:
   - Default
   - TransparentFX
