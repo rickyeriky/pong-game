@@ -28,6 +28,7 @@ public class BallMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Paddle"))
         {
             direction = Vector3.Reflect(direction, collision.contacts[0].normal);
+            MoveSpeed += 0.5f;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,13 +38,15 @@ public class BallMovement : MonoBehaviour
             //Bal opnieuw in het midden
             ResetBall();
             GameObject.Find("Canvas").GetComponent<ScoreScript>().AddP2Score();
+            MoveSpeed = 15;
         }
 
         if (collision.gameObject.CompareTag("RightBarrier"))
         {
-            //Bal opnieuw in het midden
+            
             ResetBall();
             GameObject.Find("Canvas").GetComponent<ScoreScript>().AddP1Score();
+            MoveSpeed = 15;
         }
     }
     private void ResetBall()
